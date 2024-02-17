@@ -1,0 +1,154 @@
+    index.php:
+
+php
+
+<?php
+
+$route = isset($_GET['route']) ? $_GET['route'] : 'home';
+
+$controllerPath = 'controllers/' . ucfirst($route) . 'Controller.php';
+
+if (file_exists($controllerPath)) {
+    include $controllerPath;
+    $controllerClass = ucfirst($route) . 'Controller';
+    $controller = new $controllerClass();
+    $controller->index();
+} else {
+    header("HTTP/1.0 404 Not Found");
+    echo '404 Not Found';
+    exit();
+}
+?>
+
+    controllers/HomeController.php:
+
+php
+
+<?php
+
+class HomeController {
+    public function index() {
+        $data = array('pageTitle' => 'Home');
+        include 'views/home.php';
+    }
+}
+?>
+
+    views/home.php:
+
+html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php echo $data['pageTitle']; ?></title>
+</head>
+<body>
+    <h1>Benvenuto nella pagina principale</h1>
+</body>
+</html>
+
+Assicurati di avere una struttura di cartelle come questa:
+
+    base_dashboard/
+        index.php
+        controllers/
+            HomeController.php
+        views/
+            home.php
+
+Quindi, quando accedi a index.php?route=home, dovrebbe includere HomeController.php e chiamare il metodo index() del controller, che a sua volta includerà la vista home.php.
+
+
+
+
+
+
+
+
+
+
+Certamente, creiamo un altro esempio di progetto PHP con una struttura ispirata a Django. In questo esempio, creeremo una pagina di "Contatti" con un modulo di contatto semplice.
+
+    index.php:
+
+php
+
+<?php
+
+$route = isset($_GET['route']) ? $_GET['route'] : 'home';
+
+$controllerPath = 'controllers/' . ucfirst($route) . 'Controller.php';
+
+if (file_exists($controllerPath)) {
+    include $controllerPath;
+    $controllerClass = ucfirst($route) . 'Controller';
+    $controller = new $controllerClass();
+    $controller->index();
+} else {
+    header("HTTP/1.0 404 Not Found");
+    echo '404 Not Found';
+    exit();
+}
+?>
+
+    controllers/HomeController.php:
+
+php
+
+<?php
+
+class HomeController {
+    public function index() {
+        $data = array('pageTitle' => 'Home');
+        include 'views/home.php';
+    }
+}
+?>
+
+    controllers/ContactController.php:
+
+php
+
+<?php
+
+class ContactController {
+    public function index() {
+        $data = array('pageTitle' => 'Contatti');
+        include 'views/contact.php';
+    }
+
+    public function submit() {
+        // Logica per elaborare il modulo di contatto
+        // Potresti aggiungere una funzione per gestire l'invio del modulo.
+    }
+}
+?>
+
+    views/contact.php:
+
+html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php echo $data['pageTitle']; ?></title>
+</head>
+<body>
+    <h1>Pagina Contatti</h1>
+    <form action="?route=contact&submit" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="message">Messaggio:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        <input type="submit" value="Invia">
+    </form>
+</body>
+</html>
+
+Ora, se accedi a index.php?route=contact, includerà ContactController.php e chiamerà il metodo index() del controller, visualizzando la pagina dei contatti. Se invii il modulo, dovresti aggiungere la logica appropriata nella funzione submit() del controller.

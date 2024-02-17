@@ -1,0 +1,32 @@
+-- Tabelle
+
+CREATE TABLE Clienti (
+    ClienteID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Cognome VARCHAR(50),
+    Email VARCHAR(100),
+    NumeroTelefono VARCHAR(15)
+);
+
+CREATE TABLE Prodotti (
+    ProdottoID INT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Descrizione VARCHAR(255),
+    Prezzo DECIMAL(10, 2)
+);
+
+CREATE TABLE Ordini (
+    OrdineID INT PRIMARY KEY,
+    ClienteID INT,
+    DataOrdine DATE,
+    FOREIGN KEY (ClienteID) REFERENCES Clienti(ClienteID)
+);
+
+CREATE TABLE DettagliOrdine (
+    DettaglioID INT PRIMARY KEY,
+    OrdineID INT,
+    ProdottoID INT,
+    Quantita INT,
+    FOREIGN KEY (OrdineID) REFERENCES Ordini(OrdineID),
+    FOREIGN KEY (ProdottoID) REFERENCES Prodotti(ProdottoID)
+);

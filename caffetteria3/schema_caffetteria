@@ -1,0 +1,21 @@
+Questo schema include tabelle per i clienti, i prodotti, gli ordini e i dettagli degli ordini. Ora, per la dashboard, puoi utilizzare strumenti di visualizzazione dati come Tableau, Power BI o 
+qualsiasi altro strumento che preferisci. La dashboard potrebbe includere metriche come le vendite totali, le bevande più popolari, i clienti più frequenti, ecc.
+
+Dashboard:
+
+    Vendite Totali:
+        Grafico a torta mostrante la distribuzione delle vendite per ciascuna categoria di prodotto (caffè, tè, dolci, ecc.).
+        Totale delle vendite giornaliere, settimanali e mensili.
+
+    Prodotti Popolari:
+        Grafico a barre dei prodotti più venduti.
+
+    Clienti Frequenti:
+        Lista dei clienti più frequenti.
+        Grafico a barre che mostra la frequenza degli ordini per i principali clienti.
+
+    Andamento delle Vendite:
+        Grafico a linee che mostra l'andamento delle vendite nel tempo.
+
+    Dettagli dell'Ordine:
+        Tabella con i dettagli degli ordini recenti.

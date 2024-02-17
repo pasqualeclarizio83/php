@@ -1,0 +1,54 @@
+-- Creazione della tabella per i clienti
+CREATE TABLE Clienti (
+    ClienteID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(50),
+    Cognome VARCHAR(50),
+    Email VARCHAR(100),
+    Telefono VARCHAR(15)
+);
+
+-- Creazione della tabella per i tavoli
+CREATE TABLE Tavoli (
+    TavoloID INT PRIMARY KEY AUTO_INCREMENT,
+    NumeroTavolo INT,
+    Capacita INT
+);
+
+-- Creazione della tabella per le prenotazioni
+CREATE TABLE Prenotazioni (
+    PrenotazioneID INT PRIMARY KEY AUTO_INCREMENT,
+    ClienteID INT,
+    TavoloID INT,
+    DataOraPrenotazione DATETIME,
+    DataOraArrivo DATETIME,
+    StatoPrenotazione VARCHAR(20), -- E.g., "Confermata", "Annullata", "In attesa"
+    FOREIGN KEY (ClienteID) REFERENCES Clienti(ClienteID),
+    FOREIGN KEY (TavoloID) REFERENCES Tavoli(TavoloID)
+);
+
+-- Creazione della tabella per i prodotti (pizze, bibite, ecc.)
+CREATE TABLE Prodotti (
+    ProdottoID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100),
+    Descrizione TEXT,
+    Prezzo DECIMAL(10, 2) -- DECIMAL per gestire i prezzi in modo preciso
+);
+
+-- Creazione della tabella per gli ordini
+CREATE TABLE Ordini (
+    OrdineID INT PRIMARY KEY AUTO_INCREMENT,
+    ClienteID INT,
+    DataOraOrdine DATETIME,
+    StatoOrdine VARCHAR(20), -- E.g., "In preparazione", "Consegnato", "Pagato"
+    FOREIGN KEY (ClienteID) REFERENCES Clienti(ClienteID)
+);
+
+-- Tabella di collegamento tra ordini e prodotti per gestire gli articoli ordinati
+CREATE TABLE DettagliOrdine (
+    OrdineID INT,
+    ProdottoID INT,
+    Quantita INT,
+    FOREIGN KEY (OrdineID) REFERENCES Ordini(OrdineID),
+    FOREIGN KEY (ProdottoID) REFERENCES Prodotti(ProdottoID),
+    PRIMARY KEY (OrdineID, ProdottoID)
+);

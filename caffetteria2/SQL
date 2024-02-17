@@ -1,0 +1,47 @@
+-- Tabelle
+
+CREATE TABLE Clienti (
+    ClienteID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Cognome VARCHAR(50),
+    Email VARCHAR(100),
+    NumeroTelefono VARCHAR(15)
+);
+
+CREATE TABLE Prodotti (
+    ProdottoID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Descrizione VARCHAR(255),
+    Prezzo DECIMAL(10, 2)
+);
+
+CREATE TABLE Ordini (
+    OrdineID INT AUTO_INCREMENT PRIMARY KEY,
+    ClienteID INT,
+    DataOrdine DATE,
+    FOREIGN KEY (ClienteID) REFERENCES Clienti(ClienteID)
+);
+
+CREATE TABLE DettagliOrdine (
+    DettaglioID INT PRIMARY KEY,
+    OrdineID INT,
+    ProdottoID INT,
+    Quantita INT,
+    FOREIGN KEY (OrdineID) REFERENCES Ordini(OrdineID),
+    FOREIGN KEY (ProdottoID) REFERENCES Prodotti(ProdottoID)
+);
+
+-- Esempio di dati di esempio
+INSERT INTO Clienti (ClienteID, Nome, Cognome, Email, NumeroTelefono) VALUES
+(1, 'Mario', 'Rossi', 'mario@email.com', '123-456-7890');
+
+INSERT INTO Prodotti (ProdottoID, Nome, Descrizione, Prezzo) VALUES
+(1, 'Caffè Americano', 'Caffè filtrato', 2.50),
+(2, 'Cappuccino', 'Caffè con latte e schiuma di latte', 3.50);
+
+INSERT INTO Ordini (OrdineID, ClienteID, DataOrdine) VALUES
+(1, 1, '2024-01-27');
+
+INSERT INTO DettagliOrdine (DettaglioID, OrdineID, ProdottoID, Quantita) VALUES
+(1, 1, 1, 2),
+(2, 1, 2, 1);

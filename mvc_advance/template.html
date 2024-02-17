@@ -1,0 +1,42 @@
+<!-- Template HTML con operazioni CRUD -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persons CRUD</title>
+</head>
+<body>
+    <h2>Persons List</h2>
+    
+    <!-- Visualizzazione dei dati -->
+    <ul>
+        <?php foreach ($persons as $person): ?>
+            <li><?= $person['first_name'] ?> <?= $person['last_name'] ?> (Age: <?= $person['age'] ?>)
+                <a href="?action=edit&id=<?= $person['id'] ?>">Edit</a>
+                <a href="?action=delete&id=<?= $person['id'] ?>">Delete</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    
+    <!-- Form per la creazione di una nuova persona -->
+    <h3>Create New Person</h3>
+    <form action="?action=create" method="post">
+        First Name: <input type="text" name="first_name" required><br>
+        Last Name: <input type="text" name="last_name" required><br>
+        Age: <input type="number" name="age" required><br>
+        <button type="submit">Create</button>
+    </form>
+
+    <?php if ($editMode): ?>
+        <!-- Form per l'aggiornamento di una persona -->
+        <h3>Edit Person</h3>
+        <form action="?action=update&id=<?= $editedPerson['id'] ?>" method="post">
+            First Name: <input type="text" name="first_name" value="<?= $editedPerson['first_name'] ?>" required><br>
+            Last Name: <input type="text" name="last_name" value="<?= $editedPerson['last_name'] ?>" required><br>
+            Age: <input type="number" name="age" value="<?= $editedPerson['age'] ?>" required><br>
+            <button type="submit">Update</button>
+        </form>
+    <?php endif; ?>
+</body>
+</html>

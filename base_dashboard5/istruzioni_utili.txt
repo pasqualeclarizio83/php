@@ -1,0 +1,36 @@
+accedendo a: index.php
+crea una dashboard che mi permette di accedere
+ad esempio a:
+
+index.php?route=contact
+
+
+
+
+
+accedendo a: index.php
+crea un menu sulla sinistra con una bella interfaccia
+e con un CSS
+che permette di gestire:
+index.php?route=contact
+
+
+
+
+accedendo a: index.php
+è importante includere anche la gestione del config.php
+per accedere al database
+
+
+
+
+
+accedendo a: index.php
+creare una dashboard con uno stile sul bianco
+con delle voci sulla sinistra e dell'interfaccia grafica
+molto bella
+
+
+
+accedendo a: index.php
+all'interno dell'aria bianca inserisci delle Card

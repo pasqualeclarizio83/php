@@ -1,0 +1,19 @@
+la directory di root è base_dashboard
+all'interno di base_dashboard abbiamo index.php
+creare un file in php: index.php
+che permette di gestire
+base_dashboard
+e altre directory
+accedendo a
+base_dashboard/index.php
+
+
+
+
+
+
+
+
+creare un file: index.php
+che mi permette di gestire un progetto
+qualcosa di simile a Django

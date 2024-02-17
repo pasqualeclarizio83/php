@@ -1,0 +1,6 @@
+CREATE TABLE Directory (
+    directory_id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    parent_directory_id INT,
+    FOREIGN KEY (parent_directory_id) REFERENCES Directory(directory_id) ON DELETE CASCADE
+);
