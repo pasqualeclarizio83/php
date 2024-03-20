@@ -7,6 +7,8 @@ Schema composto da:
 - login.php
 - processa_registrazione.php
 - processa_login.php
+- logout.php (per disconnetterci)
+- profilo_utente.php
 
 ## Descrizione
 
@@ -62,6 +64,10 @@ Ma se non ti registri, come fai ad identificarti?
 
 Login
 
+Dopo aver effettuato il login
+Verremo indirizzati al profilo utente.
+Ho aggiunto questa funzionalità
+
 ```bash
 # Esempio
 http://127.0.0.1/accesso_clienti_login_registrazione3/login.php
@@ -72,7 +78,7 @@ http://127.0.0.1/accesso_clienti_login_registrazione3/login.php
 
 
 Registrazione, attraverso email e password
-Alla password viene applicato l'Hashing
+La password viene salvata con Hashing
 
 ```bash
 # Esempio
@@ -80,4 +86,6 @@ http://127.0.0.1/accesso_clienti_login_registrazione3/registrazione.php
 
 ```
 
-Nel prossimo potrei creare un profilo Utente
+Gestione del profilo Utente
+
+A breve verranno introdotte altre funzionalità
