@@ -44,7 +44,7 @@ I files devono essere copiati sul Server (se lavori in remoto)
 In locale ti basta un Web Server Apache
 
 nel mio caso la cartella l'ho chiamata:
-accesso_clienti_login_registrazione3
+accesso_clienti_login_registrazione4
 
 La password viene salvata Decriptata
 Questo è molto importante
@@ -52,7 +52,7 @@ E anche quando l'utente effettua il Login
 
 ```bash
 # Esempio
-http://127.0.0.1/accesso_clienti_login_registrazione3/
+http://127.0.0.1/accesso_clienti_login_registrazione4/
 
 ```
 
@@ -70,7 +70,7 @@ Ho aggiunto questa funzionalità
 
 ```bash
 # Esempio
-http://127.0.0.1/accesso_clienti_login_registrazione3/login.php
+http://127.0.0.1/accesso_clienti_login_registrazione4/login.php
 
 ```
 
@@ -82,7 +82,7 @@ La password viene salvata con Hashing
 
 ```bash
 # Esempio
-http://127.0.0.1/accesso_clienti_login_registrazione3/registrazione.php
+http://127.0.0.1/accesso_clienti_login_registrazione4/registrazione.php
 
 ```
 
