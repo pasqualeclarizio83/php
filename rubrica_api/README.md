@@ -76,3 +76,7 @@ try {
 ?>
 
 ```
+
+#### La rispettiva immagine dell'API
+
+[Immagine](https://raw.githubusercontent.com/pasqualeclarizio83/php/refs/heads/main/rubrica_api/API.bmp)
