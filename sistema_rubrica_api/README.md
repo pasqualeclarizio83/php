@@ -155,3 +155,15 @@ function deleteContact($pdo, $id) {
 ?>
 
 ```
+
+#### Accedendo: http://127.0.0.1/sistema_rubrica_api/
+
+#### La rispettiva immagine dell'API
+
+[Install](https://github.com/pasqualeclarizio83/php/blob/main/sistema_rubrica_api/INSTALL.png)
+
+[Register](https://github.com/pasqualeclarizio83/php/blob/main/sistema_rubrica_api/contatti.png)
+
+[GET](https://github.com/pasqualeclarizio83/php/blob/main/sistema_rubrica_api/GET.png)
+
+[POST](https://github.com/pasqualeclarizio83/php/blob/main/sistema_rubrica_api/POST_1.png)
