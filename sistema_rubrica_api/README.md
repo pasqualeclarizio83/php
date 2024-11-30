@@ -156,7 +156,7 @@ function deleteContact($pdo, $id) {
 
 ```
 
-#### Accedendo: http://127.0.0.1/sistema_rubrica_api/
+#### Accedendo: http://127.0.0.1/sistema_rubrica_api/api.php
 
 #### La rispettiva immagine dell'API
 
