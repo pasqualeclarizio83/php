@@ -3,7 +3,7 @@
 $host = 'localhost';        // Il nome del server
 $dbname = 'db_rubrica';     // Nome del database
 $username = 'root';         // Nome utente del database
-$password = '';             // Password del database
+$password = 'student';             // Password del database
 
 try {
     // Creazione della connessione PDO a MariaDB
