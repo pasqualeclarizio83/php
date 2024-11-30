@@ -167,3 +167,5 @@ function deleteContact($pdo, $id) {
 [GET](https://github.com/pasqualeclarizio83/php/blob/main/sistema_rubrica_api/GET.png)
 
 [POST](https://github.com/pasqualeclarizio83/php/blob/main/sistema_rubrica_api/POST_1.png)
+
+#### è una buona base se si ha voglia di capire API in PHP
