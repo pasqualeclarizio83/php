@@ -179,6 +179,26 @@ CREATE TABLE Utenti (
 
 ### Gestione Progetto
 
+#### Di seguito è struttato il progetto, costituito da diversi files, prettamente da Classi che permettono di gestire le CRUD
+#### in linguaggio PHP
+#### Il config è importante
+
+ma è anche bene strutturare la tabella, ovvero:
+
+File SQL. Lo puoi copiare e puoi eseguirlo.
+
+[SQL](https://github.com/pasqualeclarizio83/php/blob/main/SQL.png)
+
+```php
+
+CREATE TABLE utenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+```
+
 
 [Progetto](https://github.com/pasqualeclarizio83/php/blob/main/Progetto.png)
 
