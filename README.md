@@ -32,3 +32,6 @@
 #### Python: Più versatile, utilizzato anche per data science e machine learning, ma spesso considerato più lento per applicazioni web ad alte prestazioni.
 
 #### JavaScript: Principalmente utilizzato per lo sviluppo front-end, ma con Node.js può essere utilizzato anche per il back-end. Offre un ecosistema molto ricco e una sintassi moderna.
+
+# PHP - BASI COMPLETE
+
