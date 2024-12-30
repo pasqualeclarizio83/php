@@ -35,3 +35,64 @@
 
 # PHP - BASI COMPLETE
 
+### Una Classe per gestire la connessione del DB
+
+[Inizio](https://github.com/pasqualeclarizio83/php/blob/main/inizio.png)
+
+Classe: Database.php
+
+```php
+
+<?php
+
+class Database {
+    private $host = "localhost"; // Indirizzo del server del database
+    private $user = "nome_utente"; // Nome utente del database
+    private $password = "password"; // Password del database
+    private $database = "nome_database"; // Nome del database
+    private $conn;
+
+    public function __construct($host = null, $user = null, $password = null, $database = null) {
+        if ($host) $this->host = $host;
+        if ($user) $this->user = $user;
+        if ($password) $this->password = $password;
+        if ($database) $this->database = $database;
+
+        $this->connect();
+    }
+
+    private function connect() {
+        $this->conn = new mysqli($this->host, $this->user, $this->password, $this->database);
+
+        if ($this->conn->connect_error) {
+            die("Connessione fallita: " . $this->conn->connect_error);
+        }
+        $this->conn->set_charset("utf8mb4"); // Imposta la codifica a UTF-8 per supportare caratteri speciali
+    }
+
+    public function getConnection() {
+        return $this->conn;
+    }
+
+    public function closeConnection() {
+        if ($this->conn) {
+            $this->conn->close();
+        }
+    }
+
+        public function query($sql) {
+                $result = $this->conn->query($sql);
+                if (!$result) {
+                        die("Errore nella query: " . $this->conn->error);
+                }
+                return $result;
+        }
+
+        public function escape_string($string){
+                return $this->conn->real_escape_string($string);
+        }
+}
+
+?>
+
+```
