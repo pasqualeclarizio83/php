@@ -179,7 +179,7 @@ CREATE TABLE Utenti (
 
 ### Gestione Progetto
 
-#### Di seguito è struttato il progetto, costituito da diversi files, prettamente da Classi che permettono di gestire le CRUD
+#### Di seguito è struttarato il progetto, costituito da diversi files, prettamente da Classi che permettono di gestire le CRUD
 #### in linguaggio PHP
 #### Il config è importante
 
